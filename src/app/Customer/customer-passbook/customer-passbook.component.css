@@ -1,0 +1,85 @@
+/* Style for both tables */
+.container {
+    margin-top: 4rem;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+  }
+  
+  /* Header row styles */
+  thead {
+    background-color: #007bff; /* Header background color */
+    color: white; /* Header text color */
+  }
+  
+  /* Table cell styles */
+  th, td {
+    border: 1px solid #dee2e6; /* Cell border color */
+    padding: 0.75rem;
+    text-align: left;
+  }
+  
+  /* Hover effect for table rows */
+  tbody tr:hover {
+    background-color: #f5f5f5; /* Light gray background color on hover */
+  }
+  
+  /* Additional styling for specific elements */
+  .container:nth-child(odd) {
+    background-color: #f8f9fa; /* Alternate background color for odd containers */
+  }
+  
+  /* Style for the Account Information table */
+  .container:nth-child(even) table:nth-child(1) {
+    border: 2px solid #28a745; /* Border color for the Account Information table */
+  }
+  
+  /* Style for the Transaction Details table */
+  .container:nth-child(odd) table:nth-child(2) {
+    border: 2px solid #dc3545; /* Border color for the Transaction Details table */
+  }
+  /* Style the surrounding div */
+div {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc; /* Initial border */
+  border-radius: 4px;
+  transition: border 0.3s ease-in-out; /* Add a transition effect */
+}
+
+div:hover {
+  border: 1px solid #007bff; /* Change the border color on hover */
+}
+
+/* Add some styling to the form and select dropdown */
+form {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Style the select dropdown */
+.account-select {
+  width: 100%;
+  padding: 10px;
+}
+
+/* Style the error message */
+.text-danger {
+  color: #dc3545; /* Red color for error text */
+  margin-top: 5px;
+}
+
+/* Style the submit button */
+.btn-primary {
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Change background color on hover */
+}

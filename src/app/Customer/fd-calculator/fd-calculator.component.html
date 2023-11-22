@@ -1,0 +1,52 @@
+<div class="container mt-4">
+  <div class="row px-5">
+    <div class="col-md-6">
+      <div class="fd-calculator-form bg-light p-4 rounded shadow">
+        <!-- Reactive Form for FD Calculator -->
+        <form [formGroup]="fdForm">
+
+          <!-- Slider for Amount -->
+          <div class="mb-3">
+            <label for="amountRange" class="form-label">Amount: {{ fdForm.get('amount')?.value ?? '0' }}</label>
+            <input type="number" class="form-control mb-2" formControlName="amount">
+            <input type="range" class="form-range" id="amountRange" min="1000" max="1000000" formControlName="amount">
+          </div>
+
+          <!-- Slider for Number of Years -->
+          <div class="mb-3">
+            <label for="yearsRange" class="form-label">Years: {{ fdForm.get('years')?.value ?? '0' }}</label>
+            <input type="range" class="form-range" id="yearsRange" min="1" max="30" formControlName="years">
+          </div>
+
+          <!-- Slider for Rate of Interest (ROI) -->
+          <div class="mb-3">
+            <label for="roiRange" class="form-label">Rate of Interest: {{ fdForm.get('roi')?.value ?? '0' }}%</label>
+            <input type="range" class="form-range" id="roiRange" min="1" max="15" step="0.1" formControlName="roi">
+          </div>
+        </form>
+
+
+        <!-- Display Calculated Values -->
+        <div class="mt-4 d-flex justify-content-between">
+          <p>Invested Amount:</p>
+          <p><span style="font-weight: bold;">{{ fdForm.get('amount')?.value | currency:'INR' }}</span></p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p>Estimated Returns:</p>
+          <p><span style="font-weight: bold;">{{ estimatedReturns | currency:'INR' }}</span></p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p>Final Amount:</p>
+          <p><span style="font-weight: bold;">{{ finalAmount | currency:'INR' }}</span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Placeholder for Pie Chart -->
+    <div class="col-md-6">
+      <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [type]="pieChartType">
+      </canvas>
+    </div>
+  </div>
+</div>

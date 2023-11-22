@@ -1,0 +1,32 @@
+/* Add this CSS to your component's styles or in a separate styles file */
+
+.container {
+    margin-top: 2rem;
+  }
+  
+  .table {
+    border-collapse: separate;
+    border-spacing: 0 0.5rem; /* Adjust the vertical spacing between rows */
+    width: 100%;
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid #dee2e6;
+    padding: 0.75rem; /* Adjust the cell padding */
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #f8f9fa; /* Table header background color */
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f0f0f0; /* Hover effect for table rows */
+  }
+  
+  .table-rounded th,
+  .table-rounded td {
+    border-radius: 0.25rem; /* Border radius for cells */
+  }
+  

@@ -1,0 +1,205 @@
+body {
+  background-color: #806868;
+}
+@media (min-width: 991.98px) {
+  main {
+    padding-left: 30px;
+  }
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  /* padding: 58px 0 0;  */
+  margin-top: 0px;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+  width: 240px;
+  z-index: 100;
+  text-align: center;
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+.sidebar .active {
+  border-radius: 10px;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 8px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.nav-link {
+  border-radius: 10px;
+  margin: 10px; /* Adjust as needed for space between nav-links */
+  padding: 10px; /* Adjust padding for larger click area and spacing */
+  /* border-bottom: 1px dotted #475057;  */
+  /* Divider color */
+}
+
+
+.sidebar .nav-link {
+  color: #ffffff; /* Ensures the text is light colored for contrast */
+  transition: background-color 0.2s; /* Smooth transition for hover effect */
+}
+
+.sidebar .nav-link:hover {
+  background-color: #6c6cc0; /* Dark blue color on hover */
+  color: rgb(245, 200, 148); /* Keeps the text color white on hover for better readability */
+}
+
+.sidebar .nav-link.active {
+  background-color: #6c6cc0; 
+  color: #ffffff;
+}
+
+.sidebar .nav-item.logout {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 10px;
+  border-top: 1px solid #475057; /* Divider color */
+}
+
+
+/* FD calculator button */
+
+/* General styling for the navigation item */
+.nav-item.fdcalc-button {
+  margin: 5px 0; /* Adds some space around each nav item */
+  padding: 0 10px; /* Adds padding inside the nav item */
+  border-radius: 5px; /* Slightly rounded corners for a softer look */
+}
+
+/* Styling for the link inside the navigation item */
+.nav-link.fdcalc-button1 {
+  color: rgb(252, 216, 176); /* Primary color for the link */
+  background-color: #312f2f; /* Light background for the link */
+  padding: 8px 15px; /* Padding inside the link for a larger click area */
+  border-radius: 5px; /* Rounded corners to match the nav item */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  text-decoration: none; /* Removes underline from the link */
+  display: inline-block; /* Allows applying padding and margin effectively */
+}
+
+/* Hover effect for the link */
+.nav-link.fdcalc-button1:hover {
+  background-color: #312f2f; /* Slightly darker background on hover */
+  color: #ffffff; /* Darker color for the text on hover */
+  text-decoration: none; /* Ensures the underline doesn't reappear on hover */
+  /* transition: transform 0.3s ease-in-out; */
+  transform: scale(1.05);
+}
+
+/* Active state styling for the link */
+.nav-link.fdcalc-button1:active,
+.nav-link.fdcalc-button1.router-link-active,
+.nav-link.fdcalc-button1.router-link-active:hover {
+  color: #fff; /* White text for active link */
+  background-color: #007bff; /* Darker background for active link */
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); /* Subtle inset shadow for depth */
+}
+
+
+
+
+
+
+
+.list-group-item.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.list-group-item:hover {
+  background-color: black;
+  color: white; /* Adjust text color for better visibility on the dark background */
+}
+/* Add this CSS to your stylesheet or in your component's styles */
+.col-md-4 {
+height: 100%;
+display: flex;
+align-items: stretch;
+}
+
+.img-fluid {
+height: 100%;
+width: 100%;
+object-fit: cover; /* This ensures the image covers the entire container, maintaining aspect ratio */
+}
+/* Custom styles for the Passbook Details container */
+.container-passbook {
+background-color: #f8f9fa; /* Light background color */
+padding: 20px; /* Add some padding */
+border: 1px solid #dee2e6; /* Add a border */
+border-radius: 5px; /* Add border-radius for rounded corners */
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+/* Styles for the Left Column with Image */
+.col-md-4 {
+height: fit-content;
+}
+
+/* Styles for the Right Column with Passbook Details */
+.col-md-8 {
+background-color: #ffffff; /* White background color */
+padding: 20px; /* Add some padding */
+border: 1px solid #dee2e6; /* Add a border */
+border-radius: 5px; /* Add border-radius for rounded corners */
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+/* Style for the Account Details */
+.mb-2 {
+margin-bottom: 10px; /* Add some margin between account details */
+}
+.card-img-top{
+width: 261px;
+height: 150px;
+}
+
+.a {
+border-radius: 10px;
+}
+
+.navbar {
+box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+margin-left: 30px;
+}
+
+
+.navbar-custom-text {
+font-size: 1.5em; /* Adjust this value as needed */
+}
+
+/* Adjust this if you want to style the search bar differently */
+.form-inline .form-control {
+width: 300px; /* Adjust width of the search bar */
+}
+
+/* Profile image styling */
+.navbar img.rounded-circle {
+margin-left: 5px;
+margin-right: 5px;
+object-fit: cover; /* Ensures the image covers the area without distorting */
+}
+
+.form-control:hover {
+background-color: #ffe4b6 !important;
+}
+
+.search-bar{
+margin-left: 30px;
+}

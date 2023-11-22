@@ -1,0 +1,13 @@
+.moveForm {
+    border: 1px solid #ccc; /* Border color for the form */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Add padding for better spacing */
+    transition: border-color 0.3s ease-in-out; /* Smooth transition for border color change */
+  
+    /* Optional: Add box shadow for a subtle lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .moveForm:hover {
+    border-color: #88ff00; /* Change border color on hover */
+  }

@@ -1,0 +1,53 @@
+
+
+
+
+<div class="row justify-content-center mt-5">
+  <div class="col-md-7">
+    <table class="table table-striped table-bordered table-responsive-lg custom-table text-center">
+      <thead class="bg-black text-white">
+        <tr>
+          <th>Customer Id</th>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>Email</th>
+          <th>Gender</th>
+            <th>Contact Details</th>
+            <th>State</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of dataStore" class="table-row">
+          <td>{{ item.customerId }}</td>
+          <td>{{ item.firstName }}</td>
+          <td>{{ item.lastName }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.gender }}</td>
+            <td>{{ item.contactDetails }}</td>
+            <td>{{ item.state }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="d-flex justify-content-center">
+  <nav aria-label="...">
+    <ul class="pagination">
+      <li class="page-item disabled">
+        <a class="page-link">Previous</a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item active" aria-current="page">
+        <a class="page-link" href="#">2 <span class="visually-hidden">(current)</span></a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+
+
+

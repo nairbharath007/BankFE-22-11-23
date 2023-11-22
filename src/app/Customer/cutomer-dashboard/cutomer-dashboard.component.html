@@ -1,0 +1,238 @@
+
+<!-- Sidebar -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-2">
+      <nav class="col-md-2 d-none d-md-block bg-dark sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <a class="navbar-brand" href="/customer">
+              <img src="../../../assets/bank-black-3.jpeg" height="50" width="80" alt="MDB Logo" loading="lazy" />
+            </a>
+            <!-- Customer Dashboard Link -->
+            <li class="nav-item">
+              <a href="/customer" class="nav-link">
+                <span> Dashboard</span>
+              </a>
+            </li>
+
+            <!-- Register Customer Link -->
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" (click)="showAccountCreateFun()">
+                <!-- <i class="fas fa-lock fa-fw me-3"></i> -->
+                <span> Register </span>
+              </a>
+            </li>
+
+            <!-- Request Account Link -->
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" (click)="showAccountRequestFun()">
+                <!-- <i class="fas fa-lock fa-fw me-3"></i> -->
+                <span> Create Account</span>
+              </a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" (click)="viewPassbook()">
+                <!-- <i class="fas fa-lock fa-fw me-3"></i> -->
+                <span> Passbook</span>
+              </a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" (click)="viewAccountStatement()">
+                <!-- <i class="fas fa-lock fa-fw me-3"></i> -->
+                <span> Account Statement</span>
+              </a>
+            </li>
+
+            <!-- Transaction Link -->
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" (click)="showTransactionFun()">
+                <!-- <i class="fas fa-lock fa-fw me-3"></i> -->
+                <span> Transactions</span>
+              </a>
+            </li>
+
+            <!-- Upload Documents Link -->
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" (click)="showDocumentFun()">
+                <!-- <i class="fas fa-chart-line fa-fw me-3"></i> -->
+                <span> Documents</span>
+              </a>
+            </li>
+
+            <!-- View All Query Asked Link -->
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" (click)="viewQueryForm()">
+                <span> Query</span>
+              </a>
+            </li>
+
+            <!-- Logout Customer Link -->
+            <li class="nav-item logout" routerLinkActive="active">
+              <a class="nav-link" (click)="logout()">
+                <i class="fas fa-chart-bar fa-fw me-3"></i>
+                <span> LogOut</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    </div>
+
+
+
+
+    <div class="col-md-10">
+      <!-- Navbar Component -->
+      <!-- Navbar -->
+      <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-light my-navbar">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+
+          <div class="d-flex">
+            <!-- FD Calculator Nav Item -->
+            <div class="nav-item fdcalc-button">
+              <a class="nav-link fdcalc-button1" (click)="fdcalculator()" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                FD Calculator
+              </a>
+            </div>
+    
+            <!-- AskQuery Nav Item -->
+            <div class="nav-item fdcalc-button">
+              <a class="nav-link fdcalc-button1" (click)="queyFunShow()" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                AskQuery
+              </a>
+            </div>
+          </div>
+          <!-- Search Bar -->
+          <div class="col">
+            <form class="form-inline my-2 my-lg-0 px-2">
+              <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+            </form>
+          </div>
+
+
+
+
+          <ul class="navbar-nav ms-auto d-flex flex-row">
+            <li>
+              <h1 *ngIf="needRegistartion">Create customer </h1>
+            </li>
+            <li>
+              <h1>Welcome {{userName}} </h1>
+            </li>
+            <!-- Avatar -->
+            <li class="nav-item dropdown g-1">
+
+              <img src="../../../assets/avtar.png" class="rounded-circle" height="40" alt="Avatar" loading="lazy" />
+
+            </li>
+          </ul>
+        </div>
+        <!-- Container wrapper -->
+      </nav>
+      <!-- Navbar -->
+
+      <main style="margin-top: 8px;">
+        <div class="container mt-2" *ngIf="showCardsState">
+          <div class="row">
+            <!-- Savings Account Card -->
+            <div class="col-md-3">
+              <div class="card">
+                <div class="card-body">
+                  <i class="fas fa-piggy-bank fa-2x"></i>
+                  <h5 class="card-title">Savings Account</h5>
+                  <p class="card-text">Balance: &#8377;XXX.XX</p>
+                  <a href="#" class="btn btn-primary">Manage Account</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Current Account Card -->
+            <!-- Similar structure to Savings Account Card -->
+            <!-- Current Account Card -->
+            <div class="col-md-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Current Account</h5>
+                  <p class="card-text">Balance: &#8377;XXX.XX</p>
+                  <a href="#" class="btn btn-primary">Manage Account</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fixed Deposit (FD) Account Card -->
+            <!-- Similar structure to Savings Account Card -->
+            <!-- FD Account Card -->
+            <div class="col-md-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">FD Account</h5>
+                  <p class="card-text">Balance: &#8377;XXX.XX</p>
+                  <a href="#" class="btn btn-primary">Manage Account</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- passbook.component.html -->
+
+        <div *ngIf="showPassbook">
+          <app-customer-passbook></app-customer-passbook>
+        </div>
+
+
+        <div *ngIf="showAccountForm">
+          <app-request-account></app-request-account>
+        </div>
+
+        <div *ngIf="showAccountStatment">
+          <app-account-statement></app-account-statement>
+        </div>
+
+
+        <div *ngIf="showDocument">
+          <app-customer-document></app-customer-document>
+        </div>
+
+        <div *ngIf="showAccountCreate">
+          <app-customer-register></app-customer-register>
+        </div>
+
+        <div *ngIf="showQuery">
+          <app-customer-query></app-customer-query>
+        </div>
+
+
+        <div *ngIf="showTransaction">
+          <app-customert-transaction></app-customert-transaction>
+        </div>
+
+        <h4 *ngIf="showWarrning"> Create Customer Details to Request Account</h4>
+
+        <div *ngIf="showQueryTab">
+          <app-view-query></app-view-query>
+        </div>
+
+        <div *ngIf="showCalculator">
+          <app-fd-calculator></app-fd-calculator>
+        </div>
+
+      </main>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+<!--Main Navigation-->
+
+
+
+<!--Main layout-->

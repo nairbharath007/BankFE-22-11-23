@@ -1,0 +1,11 @@
+
+  
+  .card {
+    border: 2px solid transparent; /* Set initial border color */
+    transition: border-color 0.3s ease-in-out; /* Add transition for hover effect */
+  }
+  
+  .card:hover {
+    border-color: #3498db; /* Set the border color on hover */
+  }
+  

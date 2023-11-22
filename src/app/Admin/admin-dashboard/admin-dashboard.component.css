@@ -1,0 +1,268 @@
+body {
+  background-color: #fbfbfb;
+}
+@media (min-width: 991.98px) {
+  main {
+    padding: 30px;
+  }
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  /* padding: 58px 0 0;  */
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+  width: 240px;
+  z-index: 100;
+  text-align: center;
+  
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+.sidebar .active {
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.sidebar-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  height: calc(100vh - 8px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+
+.nav-link {
+  border-radius: 10px;
+  margin: 10px; /* Adjust as needed for space between nav-links */
+  padding: 10px; /* Adjust padding for larger click area and spacing */
+  /* border-bottom: 1px dotted #475057;  */
+  /* Divider color */
+}
+
+
+.sidebar .nav-link {
+  color: #ffffff; /* Ensures the text is light colored for contrast */
+  transition: background-color 0.2s; /* Smooth transition for hover effect */
+}
+
+.sidebar .nav-link:hover {
+  background-color: #6c6cc0; /* Dark blue color on hover */
+  color: rgb(245, 200, 148); /* Keeps the text color white on hover for better readability */
+}
+
+.sidebar .nav-link.active {
+  background-color: #6c6cc0; 
+  color: #ffffff;
+}
+
+.sidebar .nav-item.logout {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 10px;
+  border-top: 1px solid #475057; /* Divider color */
+}
+
+
+
+.card {
+  /* Add some CSS for hover effects or other styling */
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+
+.btn:hover{
+  background-color: rgb(255, 255, 255);
+  color: rgb(245, 200, 148);
+}
+
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+  width:  100%;
+  margin: 0;
+}
+.my-navbar{
+  background: rgb(176, 179, 182);
+  width:  100%;
+  margin: 0;
+}
+
+.form-inline .form-control {
+width: 300px; /* Adjust width of the search bar */
+}
+
+h1{
+font-size: 1.8em;
+}
+
+.btn{
+  background-color: #6c6cc0;
+
+}
+
+.btn:hover
+{
+  background-color: #343a40;
+  color: #eec43a;
+}
+
+
+.counter-card {
+  background-color: #f8f9fa; /* Light background */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Spacing inside the card */
+  margin-bottom: 20px; /* Spacing between cards */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+  transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.counter-card:hover {
+  transform: translateY(-10px); /* Slightly raise the card on hover */
+}
+
+.counter-card h3 {
+  margin: 0;
+  font-size: 2em; /* Large font size for the counter */
+  color: #007bff; /* Primary color for the counter */
+}
+
+.counter-card p {
+  margin: 0;
+  color: #666; /* Gray color for the text */
+}
+
+.counter-card .icon {
+  font-size: 1.5em; /* Icon size */
+  color: #d8b02c; /* Icon color */
+  margin-bottom: 10px; /* Space below the icon */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* codepen for cards with icons */
+.counter-box {
+	display: block;
+	background: #f6f6f6;
+	padding: 40px 20px 37px;
+	text-align: center
+}
+
+.counter-box p {
+	margin: 5px 0 0;
+	padding: 0;
+	color: #909090;
+	font-size: 18px;
+	font-weight: 500
+}
+
+.counter-box i {
+	font-size: 60px;
+	margin: 0 0 15px;
+	color: #d2d2d2
+}
+
+.counter { 
+	display: block;
+	font-size: 32px;
+	font-weight: 700;
+	color: #666;
+	line-height: 28px
+}
+
+.counter-box.colored {
+      background: #3acf87;
+}
+
+.counter-box.colored p,
+.counter-box.colored i,
+.counter-box.colored .counter {
+	color: #fff
+}
+/* codepen for cards with icons */
+
+
+
+
+
+
+  .list-group-item.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  .list-group-item:hover {
+    background-color: black;
+    color: white; /* Adjust text color for better visibility on the dark background */
+  }
+  .card-img-top{
+    width: 261px;
+    height: 150px;
+  }
+
+  #sidebarMenu button {
+    width: 100%; /* Make the button take full width */
+    text-align: left; /* Align text to the left */
+    border-radius: 20px; /* Oval shape with border-radius */
+    margin-bottom: 8px; /* Add some spacing between buttons */
+  }
+  
+  #sidebarMenu button:hover {
+    background-color: #343a40; /* Change background color on hover */
+    color: #ffffff; /* Change text color on hover */
+  }
+
+/* Add this CSS to your component's styles or in a separate styles file */
+
+/* Style for the table */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f8f9fa; /* Alternate row background color */
+}
+
+/* Style for the form */
+.form-label {
+  font-weight: bold;
+}
+
+.form-control {
+  margin-bottom: 1rem;
+}
+
+/* Style for error messages */
+.error-message {
+  color: red;
+}
+
+/* Style for the submit button */
+.btn-primary {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: #fff; /* Text color */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}

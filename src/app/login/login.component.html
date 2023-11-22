@@ -1,0 +1,67 @@
+<div class="overlay" *ngIf="showErrorMessage">
+  <div class="popup-container">
+    <ngb-alert class="error-alert">UserName/PassWord Invalid</ngb-alert>
+    <button (click)="RefreshLogin()" class="btn btn-primary">Try Again</button>
+  </div>
+</div>
+
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="../../assets/eBankk5.png"
+          class="img-fluid" alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form [formGroup]="loginUserForm"  (ngSubmit)="submitData(loginUserForm.value)">
+          
+
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <span *ngIf="userValidator && userValidator.invalid && userValidator.touched"
+            style="color: red;"
+            >required UserName</span>
+            <input type="text" class="form-control form-control-lg"
+              placeholder="Enter Your User Name" 
+              formControlName="UserName"/>
+            <label class="form-label" for="form3Example3">User Name</label>
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+            <span *ngIf="passwordValidator && passwordValidator.invalid && passwordValidator.touched"
+            style="color: red;"
+            >required Password
+          </span>
+            <input type="password"  class="form-control form-control-lg"
+              placeholder="Enter password"
+              formControlName="Password" />
+            <label class="form-label" for="form3Example4">Password</label>
+            <!-- <span *ngIf="passwordValidator && passwordValidator.invalid && passwordValidator.touched"
+                    style="color: red;">: minimum Length 6</span> -->
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <!-- Checkbox -->
+            <!-- <div class="form-check mb-0">
+              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+              <label class="form-check-label" for="form2Example3">
+                Remember me
+              </label>
+            </div> -->
+            <a href="#!" class="text-body">Forgot password?</a>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" class="btn btn-primary btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
+                class="link-danger" routerLink="/registerForm">Register</a></p>
+          </div>
+
+        </form>
+      </div>
+    </div> 
+  </div>
+  
+</section>

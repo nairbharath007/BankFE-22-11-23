@@ -1,0 +1,43 @@
+.card:hover {
+    border: 2px solid #007bff; /* Apply border style on hover */
+    cursor: pointer; /* Change cursor on hover */
+  }/* Style the select dropdown */
+.form-group {
+  position: relative;
+}
+
+.form-group .form-control {
+  position: relative;
+  z-index: 1;
+}
+
+.form-group .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 2;
+}
+
+/* Add some styling to the form and select dropdown */
+form {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Style the error message */
+.text-danger {
+  color: #dc3545; /* Red color for error text */
+  margin-top: 5px;
+}
+
+/* Style the submit button */
+.btn-primary {
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Change background color on hover */
+}

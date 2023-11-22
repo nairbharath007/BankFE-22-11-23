@@ -1,0 +1,27 @@
+<div class="col-md-6 mx-auto mt-4" style="border: 1px solid #ddd; padding: 20px; border-radius: 10px;">
+    <h2 class="text-center">Reply to Query</h2>
+    <ngb-alert *ngIf="queryResponce" >
+       Query Request Added successfully <button type="button" class="btn btn-success" (click)="reset()">Clear</button> 
+    </ngb-alert>
+
+
+    <form [formGroup]="QueryForm" (ngSubmit)="onSubmit(QueryForm.value)">
+      <div class="mb-3">
+        <span *ngIf="queryValidator && queryValidator.invalid && queryValidator.touched" style="color: red;">
+          Required Query Text
+        </span>
+        <label for="replyMessage" class="form-label">Query Message:</label>
+        <textarea class="form-control" formControlName="queryText"></textarea>
+      </div>
+      <div class="mb-3">
+        <span *ngIf="cutomerIdValidator && cutomerIdValidator.invalid && cutomerIdValidator.touched" style="color: red;">
+          Required Customer ID
+        </span>
+        <label for="customerId" class="form-label">Customer ID:</label>
+        <input type="number" class="form-control" formControlName="customerId" placeholder="{{customerId}}"
+        [(ngModel)]="customerId" readonly>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="QueryForm.invalid">Submit</button>
+    </form>
+  </div>
+ 
