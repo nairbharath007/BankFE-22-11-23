@@ -242,7 +242,7 @@
             <!-- Left Column (Upper part) -->
             <div class="col-md-6">
               <h2>Customer Queries</h2>
-              <table class="table table-striped">
+              <table class="table table-striped custom-table">
                 <thead>
                   <tr>
                     <th>Query Message</th>
@@ -362,6 +362,10 @@
 
         <div *ngIf="adminRegister">
           <app-admin-register></app-admin-register>
+        </div>
+
+        <div *ngIf="showPaginationStatus">
+          <app-pagination></app-pagination>
         </div>
 
       </main>

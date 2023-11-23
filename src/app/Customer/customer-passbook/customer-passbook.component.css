@@ -1,85 +1,116 @@
-/* Style for both tables */
+/* Overall styling for each container */
 .container {
-    margin-top: 4rem;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 2rem;
-  }
-  
-  /* Header row styles */
-  thead {
-    background-color: #007bff; /* Header background color */
-    color: white; /* Header text color */
-  }
-  
-  /* Table cell styles */
-  th, td {
-    border: 1px solid #dee2e6; /* Cell border color */
-    padding: 0.75rem;
-    text-align: left;
-  }
-  
-  /* Hover effect for table rows */
-  tbody tr:hover {
-    background-color: #f5f5f5; /* Light gray background color on hover */
-  }
-  
-  /* Additional styling for specific elements */
-  .container:nth-child(odd) {
-    background-color: #f8f9fa; /* Alternate background color for odd containers */
-  }
-  
-  /* Style for the Account Information table */
-  .container:nth-child(even) table:nth-child(1) {
-    border: 2px solid #28a745; /* Border color for the Account Information table */
-  }
-  
-  /* Style for the Transaction Details table */
-  .container:nth-child(odd) table:nth-child(2) {
-    border: 2px solid #dc3545; /* Border color for the Transaction Details table */
-  }
-  /* Style the surrounding div */
-div {
-  margin-top: 20px;
+  margin-top: 4rem;
   padding: 20px;
-  border: 1px solid #ccc; /* Initial border */
-  border-radius: 4px;
-  transition: border 0.3s ease-in-out; /* Add a transition effect */
+  border-radius: 8px;
+  background: transparent; /* Fully transparent background for container */
 }
 
-div:hover {
-  border: 1px solid #007bff; /* Change the border color on hover */
+/* Styling for tables with transparent background */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  background: transparent; /* Fully transparent background for tables */
+  backdrop-filter: blur(5px); /* Blur effect for the background */
 }
 
-/* Add some styling to the form and select dropdown */
+/* Styling for table headers */
+
+table tr td, table tr th {
+  background-color: rgba(255, 255, 255, 0.2) ; /* This sets a white background with 50% opacity */
+  /* Other styles */
+  font-weight: 500;
+}
+
+thead tr th{
+  background-color: rgba(0, 0, 0, 0.8); /* This sets a black background with 50% opacity for the header */
+  color: rgb(255, 254, 254); /* Ensuring the text color is white */
+}
+
+/* Style for table headers */
+.table thead {
+  background-color: #000; /* Black background for headers */
+  color: #fff; /* White text */
+}
+
+/* Style for table rows on hover */
+.table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.9); /* Less transparent on hover */
+  transform: scale(1.02); /* Slightly larger on hover */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for transform and background-color */
+}
+
+
+/* Styling for table cells */
+th, td {
+  border: 1px solid transparent; /* Transparent borders for cells */
+  border-left: none;
+  border-right: none;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+/* Hover effect for table rows */
+tbody tr {
+  transition: background-color 0.3s ease-in-out; /* Transition for hover effect */
+}
+
+tbody tr:hover {
+  background-color: rgba(245, 245, 245, 0.5); /* Semi-transparent hover color */
+}
+
+/* Removing lines between containers */
+.container + .container {
+  border-top: none; /* Remove top border of the subsequent container */
+}
+
+/* Style for the form */
 form {
   margin-top: 20px;
 }
 
+/* Style for form groups */
 .form-group {
   margin-bottom: 20px;
 }
 
-/* Style the select dropdown */
+/* Style for the select dropdown */
 .account-select {
   width: 100%;
   padding: 10px;
+  background: rgba(255, 255, 255, 0.5); /* Semi-transparent dropdown */
+  border-radius: 5px;
+  border: 1px solid #ddd;
 }
 
-/* Style the error message */
+/* Style for error messages */
 .text-danger {
   color: #dc3545; /* Red color for error text */
   margin-top: 5px;
 }
 
-/* Style the submit button */
+/* Style for the submit button */
 .btn-primary {
-  cursor: pointer;
+  width: 100%; /* Full width button */
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #007bff; /* Primary button color */
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
 .btn-primary:hover {
-  background-color: #0056b3; /* Change background color on hover */
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Ensure no border is visible between containers */
+.container {
+  border: none;
+}
+
+
+label{
+  font-weight: 500;
 }

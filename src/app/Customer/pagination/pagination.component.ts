@@ -1,7 +1,8 @@
+// pagination.component.ts
+
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { CustomerServiceService } from 'src/app/service/customer-service.service';
-
 
 @Component({
   selector: 'app-pagination',
@@ -9,16 +10,16 @@ import { CustomerServiceService } from 'src/app/service/customer-service.service
   styleUrls: ['./pagination.component.css']
 })
 export class PaginationComponent {
-  paginator: any;
+  paginator: any = {};
   dataSource: any;
-  currentPage: any;
-  removeBank:any;
-  pageSize: any;
-
+  currentPage: number = 1;
+  pageSize: number = 5; // set your desired initial page size
+  totalPages: any;
   headers: any;
-  bankData: any;
 
-  constructor(private auth: CustomerServiceService) {}
+  constructor(private auth: CustomerServiceService) {
+    this.showBankData(this.currentPage, this.pageSize);
+  }
 
   showBankData(pageNumber: number, pageSize: number) {
     console.log("working");
@@ -26,30 +27,24 @@ export class PaginationComponent {
       {
         next: (response) => {
           this.headers = response.headers.get('x-Pagination');
-          this.bankData = response.body;
+          this.dataSource = response.body;
           this.headers = JSON.parse(this.headers);
-          // Assuming the paginator is an object with appropriate properties
-          this.paginator.length = this.headers.TotalCount;
-          this.paginator.pageIndex = this.currentPage;
-          // Assuming MatTableDataSource is not used, use this.dataSource as per your data structure
-          this.dataSource = this.bankData;
+          this.totalPages = this.headers.TotalPage;
+          this.paginator.pageIndex = this.currentPage - 1;
         },
         error: (err: HttpErrorResponse) => {
           console.log(err);
         }
       }
     );
-
-    this.removeBank = this.auth;
   }
 
-  pageChanged(event: any) {
-    this.pageSize = event.itemsPerPage;
-    this.currentPage = event.page;
-    this.showBankData(this.currentPage + 1, this.pageSize);
+  pageChanged(page: number) {
+    this.currentPage = page;
+    this.showBankData(this.currentPage, this.pageSize);
   }
 
-
-
-
+  getPagesArray(): number[] {
+    return Array.from({ length: this.totalPages }, (_, i) => i + 1);
+  }
 }

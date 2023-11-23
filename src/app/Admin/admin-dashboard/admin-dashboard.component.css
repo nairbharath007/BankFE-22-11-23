@@ -300,3 +300,62 @@ font-size: 1.8em;
 
 
 
+
+
+/* Keyframes for slide-in animation */
+@keyframes slideInAnimation {
+  from {
+      transform: translateX(-30px); /* Start from left */
+      opacity: 0; /* Start from fully transparent */
+  }
+  to {
+      transform: translateX(0); /* End at original position */
+      opacity: 1; /* Fully opaque */
+  }
+}
+
+/* Apply the animation to each table row */
+.table.custom-table tbody tr {
+  animation: slideInAnimation 0.8s ease-out; /* 0.5s duration, ease-out timing function */
+}
+
+
+
+
+
+/* Style for the table row on hover */
+.table.custom-table tbody tr:hover {
+  background-color: rgb(205, 248, 237); /* Fully opaque on hover */
+  transform: scale(1.02); /* Slightly increase size */
+  transition: transform 0.3s, background-color 0.3s; /* Smooth transition for transform and background-color */
+}
+
+/* Style for table cells */
+.table.custom-table td,
+.table.custom-table th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+table tr td, table tr th {
+  background-color: rgba(255, 255, 255, 0.2) ; /* This sets a white background with 50% opacity */
+  /* Other styles */
+  font-weight: 500;
+  max-width: max-content;
+}
+
+.custom-table thead tr th{
+  background-color: rgba(0, 0, 0, 0.8); /* This sets a black background with 50% opacity for the header */
+  color: rgb(255, 254, 254); /* Ensuring the text color is white */
+}
+
+
+.col-md-6 {
+  margin: 0 auto; /* Centers the column */
+}
+
+.custom-table {
+  margin-top: 20px; /* Adds some space above the table */
+  margin-bottom: 20px; /* Adds some space below the table */
+}

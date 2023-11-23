@@ -1,0 +1,122 @@
+/* Style for tables */
+.table {
+    background-color: rgba(255, 255, 255, 0.3); /* Transparent background */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  
+  table tr td, table tr th {
+    background-color: rgba(255, 255, 255, 0.2) ; /* This sets a white background with 50% opacity */
+    /* Other styles */
+    font-weight: 500;
+  }
+  
+   thead tr th{
+    background-color: rgba(0, 0, 0, 0.8); /* This sets a black background with 50% opacity for the header */
+    color: rgb(255, 254, 254); /* Ensuring the text color is white */
+  }
+  
+  /* Style for table headers */
+  .table thead {
+    background-color: #000; /* Black background for headers */
+    color: #fff; /* White text */
+  }
+  
+  /* Style for table rows on hover */
+  .table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.9); /* Less transparent on hover */
+    transform: scale(1.02); /* Slightly larger on hover */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for transform and background-color */
+  }
+  
+  /* Style for table cells */
+  .table td, .table th {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  /* Additional style for better visibility */
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(245, 245, 245, 0.8); /* Slight variation for striped rows */
+  }
+  
+  
+  label{
+    font-weight: 500;
+  }
+  
+  /* Style for the search form */
+  .search-form {
+    display: flex;
+    justify-content: center; /* Center the form content */
+    align-items: center; /* Align items vertically */
+    margin-bottom: 1rem;
+  }
+  
+  /* Style for the search input */
+  .search-form .form-control {
+    margin-right: 0.5rem; /* Space between input and button */
+    border-radius: 0.25rem;
+  }
+  
+  /* Style for the search button */
+  .search-form .btn-primary {
+    border-radius: 0.25rem;
+  }
+  
+  /* Additional styles if needed */
+  
+  
+  
+  /* Style for the accordion */
+  .accordion-button {
+    justify-content: center; /* Center the text */
+    background-color: #f8f9fa; /* Light background color */
+    font-weight: bold; /* Bold text */
+  }
+  
+  /* Style for the accordion when collapsed */
+  .accordion-button.collapsed {
+    color: #007bff; /* Change color when collapsed */
+  }
+  
+  /* Style for the accordion content */
+  .accordion-body {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  }
+  
+  /* Style for the submit button */
+  .form-group .btn-primary {
+    display: block; /* Make the button a block element */
+    width: 50%; /* Width of the button */
+    margin: 0 auto; /* Center the button */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+  }
+  
+  /* Hover effect for the submit button */
+  .form-group .btn-primary:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
+  
+  /* Style for the accordion */
+  .accordion-item {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Light border for definition */
+  }
+  
+  .accordion-header .accordion-button {
+    background-color: rgba(0, 0, 0, 0.6); /* Darker for the header */
+    color: white; /* White text */
+  }
+  
+  .accordion-header .accordion-button.collapsed {
+    background-color: transparent; /* Transparent when collapsed */
+    color: black; /* Black text when collapsed */
+  }
+  
+  .accordion-body {
+    background-color: transparent; /* Transparent body */
+  }
+  

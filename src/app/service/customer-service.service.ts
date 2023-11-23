@@ -18,7 +18,7 @@ askQueryUrl="https://localhost:7078/api/Query/customerAskQuery";
 
 updateCustoemrUrl="https://localhost:7078/api/Customer/"
 
-paginationUrl="";
+
 
 twoDateFilterUrl="https://localhost:7078/api/Transaction/DateFilter"//need to modify 
 
@@ -26,6 +26,9 @@ fetchCustomerDetailsUrl="https://localhost:7078/api/Customer/customerDataFetch"/
 
 
 DeleteCustomerUrl="https://localhost:7078/api/Customer?id"
+
+paginationUrl="https://localhost:7078/api/Account/pagination";
+
 
   constructor(private http:HttpClient) { }
  
@@ -57,11 +60,6 @@ public UserIdFetchcustomerId(id:any)
   return this.http.get(this.fetchCustomerDetailsUrl+"/"+id)
 }
 
-public paginationBank(pgNo ?:number,pgSize?:number)
-{
-return this.http.get(this.paginationUrl+ "?PageNumber=" +pgNo + "&PageSize=" +pgSize ,
-{ observe: 'response' })
-}
 
 public twoDateFilter(data:any)
 {
@@ -82,6 +80,12 @@ public getOneCustomer(data:any)
 public DeleteCustomer(id:any)
 {
   return this.http.delete(this.DeleteCustomerUrl+"="+id)
+}
+
+public paginationBank(pgNo ?:number,pgSize?:number)
+{
+return this.http.get(this.paginationUrl+ "?PageNumber=" +pgNo + "&PageSize=" +pgSize ,
+{ observe: 'response' })
 }
 
 

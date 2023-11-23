@@ -9,3 +9,82 @@
     border-color: #3498db; /* Set the border color on hover */
   }
   
+
+  /* Glassmorphic effect for the card */
+.bg-glass {
+  background: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+  backdrop-filter: blur(4px); 
+  border-radius: 15px; /* Optional: Rounded corners for the card */
+}
+
+/* Font weight for labels */
+.form-label {
+  font-weight: 700; /* Set the font weight */
+}
+
+/* Styling for input fields */
+input.form-control {
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+  border: 1px solid rgba(255, 255, 255, 0.8); /* Light border for inputs */
+  border-radius: 5px; /* Rounded corners for inputs */
+  padding: 10px; /* Padding inside the inputs */
+  color: #fff; /* White text color */
+}
+
+/* Hover effect for input fields */
+input.form-control:hover {
+  border-color: #3498db; /* Change border color on hover */
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #3498db; /* Primary color for the button */
+  border: none; /* Remove default border */
+  padding: 10px 20px; /* Padding for the button */
+  border-radius: 5px; /* Rounded corners for the button */
+}
+
+/* Hover effect for the button */
+.btn-primary:hover {
+  background-color: #000000; /* Slightly darker shade on hover */
+  color:#fff;
+}
+
+/* Error message styles */
+span {
+  display: block; /* Make spans block-level for better layout */
+  margin-top: 5px; /* Spacing above the error message */
+}
+
+
+
+/* Center the button */
+.btn-block {
+  display: block; /* Make the button a block element */
+  width: 50%; /* Set a specific width for the button */
+  margin: 0 auto; /* Auto margins for horizontal centering */
+  margin-top: 20px; /* Space above the button */
+}
+
+/* Styling for the button */
+.btn-primary {
+  background-color: #3498db; /* Primary color for the button */
+  border: none; /* Remove default border */
+  padding: 10px 20px; /* Padding for the button */
+  border-radius: 5px; /* Rounded corners for the button */
+  font-weight: 500; /* Font weight */
+  text-transform: uppercase; /* Uppercase text */
+  transition: background-color 0.3s, transform 0.2s; /* Transitions for hover effects */
+}
+
+/* Hover effect for the button */
+.btn-primary:hover {
+  background-color: #2980b9; /* Slightly darker shade on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Focus effect for the button */
+.btn-primary:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.5); /* Custom focus outline */
+}

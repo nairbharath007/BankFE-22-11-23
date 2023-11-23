@@ -345,6 +345,7 @@ this.userName=datas.userName
           this.noQueryAdded = false;
           this.showCrudeState=false;
           this.adminRegister=false;
+          this.showPaginationStatus=false
           
           
           
@@ -359,6 +360,7 @@ this.userName=datas.userName
           this.showCustomerAll=false;
           this.showCrudeState=false;
           this.adminRegister=false;
+          this.showPaginationStatus=false
           console.log(err);
           console.log("error worked");
 
@@ -430,6 +432,7 @@ this.userName=datas.userName
     this.noQueryAdded=false;
     this.showCrudeState=false;
     this.adminRegister=false;
+    this.showPaginationStatus=false
 
   }
 
@@ -447,6 +450,7 @@ this.userName=datas.userName
     this.noQueryAdded=false;
     this.showCrudeState=false;
     this.adminRegister=false;
+    this.showPaginationStatus=false
   }
 
   //
@@ -462,6 +466,7 @@ this.userName=datas.userName
     this.showCardsState = false;
     this.showCrudeState=false;
     this.adminRegister=false;
+    this.showPaginationStatus=false
   }
 
   //showCustomerAll
@@ -479,6 +484,7 @@ this.userName=datas.userName
     this.noQueryAdded=false;
     this.showCrudeState=false;
     this.adminRegister=false;
+    this.showPaginationStatus=false
   }
   //update interest
   showUpdateInterest = false
@@ -495,6 +501,7 @@ this.userName=datas.userName
     this.noQueryAdded=false;
     this.showCrudeState=false;
     this.adminRegister=false;
+    this.showPaginationStatus=false
 
   }
 
@@ -512,6 +519,7 @@ this.userName=datas.userName
     this.noQueryAdded=false;
     this.showCrudeState=false;
     this.adminRegister=false;
+    this.showPaginationStatus=true;
     
 
   }
@@ -535,6 +543,7 @@ this.userName=datas.userName
     this.showCustomerAll = false;
     this.showCrudeState=false;
     this.adminRegister=false;
+    this.showPaginationStatus=false
   }
 
 
@@ -553,6 +562,7 @@ this.showCrudeState=true
     this. showCustomerAll=false;
     this.showCardsState=false;
     this.adminRegister=false;
+    this.showPaginationStatus=false
   }
 
 
@@ -574,7 +584,24 @@ this.showCrudeState=true
     this.showQueryResult=false;
     this. showCustomerAll=false;
     this.showCardsState=false;
+    this.showPaginationStatus=false
     
+  }
+
+  showPaginationStatus=false
+  showPagination()
+  {this.showPaginationStatus=true
+
+    this.adminRegister=false
+    this.showCrudeState=false
+    this.showTransactionState=false
+    this.showUpdateInterest=false
+    this.showAccountRequest=false;
+    this.showAccountTransactions=false 
+    this.formShow=false;
+    this.showQueryResult=false;
+    this. showCustomerAll=false;
+    this.showCrudeState=false;
   }
 
 
