@@ -74,11 +74,10 @@
 
 
  
-  <div *ngIf="documents">
-    <!-- ... Your existing code ... -->
+  <!-- <div *ngIf="documents">
     <h3>Image for Customer ID {{ searchCustomerId }}</h3>
     <img *ngIf="imageSource" [src]="imageSource" alt="Document Image" />
-  </div>
+  </div> -->
 
   <!-- document-details.component.html -->
 
@@ -88,7 +87,7 @@
 </div> -->
 
 <!-- your-component.component.html    (click)="openImageModal()"  -->
-<div *ngIf="imageSource" class="card">
+<!-- <div *ngIf="imageSource" class="card">
   <div class="card-header  ">
     <h5 class="card-title">Document Image</h5> 
     <button class="btn btn-close justify-content-end" (click)="close()"></button>
@@ -101,6 +100,6 @@
 <div *ngIf="showCustomerNotUploaded">
   <ngb-alert>Customer Not Uploaded Any Documents</ngb-alert>
  
-</div>
+</div> -->
 
 

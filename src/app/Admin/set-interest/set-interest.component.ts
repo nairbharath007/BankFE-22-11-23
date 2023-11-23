@@ -34,7 +34,7 @@ this.auth.setAccountInterest(data).subscribe(
     next:(data)=>
     {
       console.log(data);
-      alert("successfully updated the Interest")
+      alert("Successfully updated the Interest Rate.")
       location.reload()
       
     },

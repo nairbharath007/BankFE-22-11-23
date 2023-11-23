@@ -127,7 +127,7 @@ this.auth.RegisterCustomer(data).subscribe(
     {
     
       console.log(data);
-      alert("registration success");
+      alert("Registration Successful.");
       location.reload();
       
     },
@@ -139,7 +139,7 @@ this.auth.RegisterCustomer(data).subscribe(
         this.router.navigateByUrl("/customer")
       }
       console.log(err);
-      console.log("error here");
+      console.log("Error here.");
       
       
     }

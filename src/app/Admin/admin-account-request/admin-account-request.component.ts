@@ -49,7 +49,7 @@ export class AdminAccountRequestComponent {
     this.auth.ActivateAccountById(account).subscribe(
       {
         next: (res) => {
-          alert("account Activated Successfully")
+          alert("Account Activated Successfully.")
           location.reload()
         },
         error: (err: HttpErrorResponse) => {

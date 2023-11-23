@@ -49,7 +49,7 @@ this.auth.RequestAccount(data).subscribe(
     next:(data)=>
     {
       console.log(data);
-      alert("Request send to ")
+      alert("Request send to Admin. ")
       location.reload();
       
     },
