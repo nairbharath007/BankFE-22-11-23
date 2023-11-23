@@ -28,7 +28,7 @@ input.form-control {
   border: 1px solid rgba(255, 255, 255, 0.8); /* Light border for inputs */
   border-radius: 5px; /* Rounded corners for inputs */
   padding: 10px; /* Padding inside the inputs */
-  color: #fff; /* White text color */
+  color: #000000; /* White text color */
 }
 
 /* Hover effect for input fields */

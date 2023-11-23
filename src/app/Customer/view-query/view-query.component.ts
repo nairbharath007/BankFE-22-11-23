@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { DataServiceService } from 'src/app/service/data-service.service';
 import { QueryServiceService } from 'src/app/service/query-service.service';
 
 @Component({
@@ -9,8 +10,12 @@ import { QueryServiceService } from 'src/app/service/query-service.service';
   styleUrls: ['./view-query.component.css']
 })
 export class ViewQueryComponent {
+  customerId:any
 
-  constructor(private auth:QueryServiceService){}
+  constructor(private auth:QueryServiceService, 
+    private datas:DataServiceService){
+      this.customerId=  datas.customerId
+    }
   queries:any
   queryNotFound=false
 

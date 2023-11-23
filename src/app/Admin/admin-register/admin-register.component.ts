@@ -56,7 +56,7 @@ export class AdminRegisterComponent {
       {
         next: (data) => {
           console.log(data);
-          alert("registration success");
+          alert("Registration Successful.");
           location.reload();
         },
         error: (errorRes: HttpErrorResponse) => {

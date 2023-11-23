@@ -55,7 +55,7 @@ export class SignupPageComponent {
       {
         next: (data) => {
           console.log(data);
-          alert("registration success");
+          alert("Registration Success.");
           this.route.navigateByUrl("");
         },
         error: (errorRes: HttpErrorResponse) => {

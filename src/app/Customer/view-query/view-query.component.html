@@ -4,7 +4,8 @@
       <form [formGroup]="customerIdForm" (ngSubmit)="showQuery(customerIdForm.value)">
         <div class="form-group">
           <label for="customerId">Customer ID:</label>
-          <input type="number" formControlName="customerId" class="form-control">
+          <input type="number" placeholder="{{customerId}}"
+          [(ngModel)]="customerId" formControlName="customerId" class="form-control" readonly>
           <span *ngIf="qValidator && qValidator.invalid && qValidator.touched"
                 style="color: red;"
           >  Required customerId</span>
