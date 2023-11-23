@@ -11,6 +11,10 @@ import { DocumentServiceService } from 'src/app/service/document-service.service
   styleUrls: ['./customer-document.component.css']
 })
 export class CustomerDocumentComponent {
+
+  showErrorMessage:any
+  uploadSuccess = false;
+
   customerDocumentForm = new FormGroup({
     DocumentType: new FormControl('', Validators.required),
     DocumentFile: new FormControl(null, Validators.required), // Use null for file input
@@ -53,9 +57,14 @@ export class CustomerDocumentComponent {
     this.auth.uploadDocument(formData).subscribe({
       next: (res) => {
         console.log(res);
+        this.uploadSuccess = true; // Set success to true on successful upload
+        setTimeout(() => this.uploadSuccess = false, 3000);
+
       },
       error: (err: HttpErrorResponse) => {
         console.error(err);
+        this.showErrorMessage=true
+        this.uploadSuccess = false; 
       }
     });
   }

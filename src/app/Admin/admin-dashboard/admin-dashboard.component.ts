@@ -249,13 +249,16 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { DataServiceService } from 'src/app/service/data-service.service';
 import { QueryServiceService } from 'src/app/service/query-service.service';
 import { TransactionServiceService } from 'src/app/service/transaction-service.service';
+
+declare var bootstrap: any;
+
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
@@ -274,6 +277,7 @@ export class AdminDashboardComponent {
 
   userName: any;
 
+  @ViewChild('replyModal') private replyModal!: ElementRef;
 
   constructor(private dateFilter: TransactionServiceService,
     private routeSet: Router,
@@ -340,6 +344,7 @@ this.userName=datas.userName
           this.showCustomerAll=false;
           this.noQueryAdded = false;
           this.showCrudeState=false;
+          this.adminRegister=false;
           
           
           
@@ -353,6 +358,7 @@ this.userName=datas.userName
           this.showCardsState = false;
           this.showCustomerAll=false;
           this.showCrudeState=false;
+          this.adminRegister=false;
           console.log(err);
           console.log("error worked");
 
@@ -387,14 +393,16 @@ this.userName=datas.userName
         next: (data) => {
 
           this.feedbackMessage = data;
-          alert("succesfully Replied")
+          alert("Succesfully Replied.")
           location.reload()
+          const modal = new bootstrap.Modal(this.replyModal.nativeElement);
+          modal.hide();
 
 
         },
         error: (error: HttpErrorResponse) => {
           console.log(error);
-          console.log("error here");
+          console.log("Error here.");
           this.eroorQuerySubmit = true
 
 
@@ -405,7 +413,11 @@ this.userName=datas.userName
 
 
   formShow = false;
-  generateReplyForm() {
+  generateReplyForm(customerId:number) {
+    this.replyForm.patchValue({ customerId: customerId.toString() });
+    const modal = new bootstrap.Modal(this.replyModal.nativeElement);
+    modal.show();
+
     this.formShow = true;
 
     this.showTransactionState = false
@@ -417,6 +429,7 @@ this.userName=datas.userName
     this.showCardsState = false;
     this.noQueryAdded=false;
     this.showCrudeState=false;
+    this.adminRegister=false;
 
   }
 
@@ -433,6 +446,7 @@ this.userName=datas.userName
     this.showCardsState = false;
     this.noQueryAdded=false;
     this.showCrudeState=false;
+    this.adminRegister=false;
   }
 
   //
@@ -447,6 +461,7 @@ this.userName=datas.userName
     this.showTransactionState = false
     this.showCardsState = false;
     this.showCrudeState=false;
+    this.adminRegister=false;
   }
 
   //showCustomerAll
@@ -463,6 +478,7 @@ this.userName=datas.userName
     this.showCardsState = false;
     this.noQueryAdded=false;
     this.showCrudeState=false;
+    this.adminRegister=false;
   }
   //update interest
   showUpdateInterest = false
@@ -478,6 +494,8 @@ this.userName=datas.userName
     this.showCardsState = false;
     this.noQueryAdded=false;
     this.showCrudeState=false;
+    this.adminRegister=false;
+
   }
 
 
@@ -493,6 +511,7 @@ this.userName=datas.userName
     this.showCardsState = false;
     this.noQueryAdded=false;
     this.showCrudeState=false;
+    this.adminRegister=false;
     
 
   }
@@ -515,6 +534,7 @@ this.userName=datas.userName
     this.showQueryResult = false;
     this.showCustomerAll = false;
     this.showCrudeState=false;
+    this.adminRegister=false;
   }
 
 
@@ -532,6 +552,7 @@ this.showCrudeState=true
     this.showQueryResult=false;
     this. showCustomerAll=false;
     this.showCardsState=false;
+    this.adminRegister=false;
   }
 
 
@@ -544,8 +565,6 @@ this.showCrudeState=true
   {
     this.adminRegister=true
 
-
-
     this.showCrudeState=false
     this.showTransactionState=false
     this.showUpdateInterest=false
@@ -554,7 +573,8 @@ this.showCrudeState=true
     this.formShow=false;
     this.showQueryResult=false;
     this. showCustomerAll=false;
-    this.showCrudeState=false;
+    this.showCardsState=false;
+    
   }
 
 

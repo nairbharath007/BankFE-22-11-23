@@ -1,4 +1,22 @@
-body
-{
+body {
+    /* Set the background image */
     background-image: url("./assets/bank-wallpaper.png");
+
+    /* Ensure the background covers the entire body */
+    background-size: cover;
+
+    /* Make background not repeat */
+    background-repeat: no-repeat;
+
+    /* Add a semi-transparent background color to apply the blur effect */
+    background-color: rgba(255, 255, 255, 0.2); /* This is white with 50% opacity */
+
+    /* Apply the blur filter */
+    backdrop-filter: blur(4px);
+
+    /* Set the minimum height to 100% of the viewport height */
+    min-height: 100vh;
+
+    /* Other styles (like margin) might be needed depending on your overall layout */
+    margin: 0; /* This removes default margins added by the browser */
 }

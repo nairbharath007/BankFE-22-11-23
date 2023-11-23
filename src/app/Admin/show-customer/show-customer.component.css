@@ -1,0 +1,59 @@
+
+/* Keyframes for slide-in animation */
+@keyframes slideInAnimation {
+    from {
+        transform: translateX(-30px); /* Start from left */
+        opacity: 0; /* Start from fully transparent */
+    }
+    to {
+        transform: translateX(0); /* End at original position */
+        opacity: 1; /* Fully opaque */
+    }
+  }
+  
+  /* Apply the animation to each table row */
+  .table.custom-table tbody tr {
+    animation: slideInAnimation 0.8s ease-out; /* 0.5s duration, ease-out timing function */
+  }
+
+  
+
+
+table tr td, table tr th {
+    background-color: rgba(255, 255, 255, 0.2) ; /* This sets a white background with 50% opacity */
+    /* Other styles */
+    font-weight: 500;
+  }
+  
+  .custom-table thead tr th{
+    background-color: rgba(0, 0, 0, 0.8); /* This sets a black background with 50% opacity for the header */
+    color: rgb(255, 254, 254); /* Ensuring the text color is white */
+  }
+  
+
+  /* Ensure the table takes the full width */
+.custom-table {
+    width: 100%;
+    max-width: 100%; /* Ensure maximum width is not restricted */
+    /* ... other styles ... */
+}
+
+/* Ensure the container allows for full width */
+.container {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Ensure columns also take full width */
+.row .col-md-7, .row .col-md-6, .row .col {
+    width: 100%;
+    max-width: 100%;
+    /* ... other styles ... */
+}
+
+/* Other styles remain the same */
+/* ... */

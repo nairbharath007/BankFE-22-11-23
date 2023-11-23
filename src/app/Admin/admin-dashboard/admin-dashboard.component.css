@@ -259,10 +259,44 @@ font-size: 1.8em;
 
 /* Style for the submit button */
 .btn-primary {
-  background-color: #007bff; /* Bootstrap primary color */
-  color: #fff; /* Text color */
+  background-color: #6c6cc0; /* Bootstrap primary color */
+  color: white; /* Text color */
 }
 
 .btn-primary:hover {
-  background-color: #0056b3; /* Darker color on hover */
+  background-color: #343a40;
+  color: #eec43a; 
 }
+
+
+
+
+
+
+
+
+
+
+/* Styles for the modal header */
+.modal-header {
+  background-color: black;
+  color: rgb(212, 169, 89);
+}
+
+/* Styles for the close button */
+.modal-header .btn-close {
+  color: orange;
+  filter: invert(1); /* Invert the color for visibility */
+  opacity: 1;
+}
+
+/* Hover and focus styles for the close button */
+.modal-header .btn-close:hover,
+.modal-header .btn-close:focus {
+  color: rgb(243, 214, 87);
+  opacity: 0.5; /* Slightly reduce opacity on hover/focus */
+  filter: invert(1);
+}
+
+
+

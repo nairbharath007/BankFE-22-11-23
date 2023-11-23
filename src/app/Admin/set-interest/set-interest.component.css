@@ -1,43 +1,76 @@
+/* Keyframes for pop-up animation */
+@keyframes popUpAnimation {
+  from {
+      transform: scale(0.4); /* Start from half the size */
+      opacity: 0; /* Start from fully transparent */
+  }
+  to {
+      transform: scale(1); /* Scale to full size */
+      opacity: 1; /* Fully opaque */
+  }
+}
 
+/* Style for the container */
 .container {
-    margin-top: 4rem;
-  }
-  
-  .row {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .col-md-6 {
-    border: 1px solid #ddd; /* Border color */
-    padding: 1.5rem;
-    border-radius: 8px; /* Border radius for a rounded appearance */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional box shadow for a subtle lift */
-  }
-  
-  /* Hover effect for the form */
-  .col-md-6:hover {
-    background-color: #f8f9fa; /* Light gray background color on hover */
-  }
-  
-  /* Style for form labels */
-  label {
-    font-weight: bold;
-  }
-  
-  /* Style for form inputs */
-  .form-control {
-    margin-bottom: 1rem;
-  }
-  
-  /* Style for submit button */
-  .btn-primary {
-    background-color: #007bff; /* Button background color */
-    color: #fff; /* Button text color */
-  }
-  
-  /* Hover effect for submit button */
-  .btn-primary:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-  }
-  
+  margin-top: 4rem;
+  animation: popUpAnimation 0.5s ease-out forwards; /* 0.5s duration, ease-out timing function */
+
+}
+
+/* Style for the row */
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+/* Style for the column */
+.col-md-5 {
+  border: 0px solid #ddd;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background-color: transparent; /* Set the background of the form as transparent */
+}
+
+/* Style for form labels */
+label {
+  font-weight: bold;
+}
+
+/* Style for form inputs */
+.form-control {
+  margin-bottom: 1rem;
+}
+
+/* Style for the form */
+.custom-container {
+  text-align: center; /* Center align the elements inside the form */
+}
+
+/* Style for submit button */
+.custom-container .btn-primary {
+  background-color: black;
+  color: rgb(255, 198, 93);
+  width: auto; /* Adjust width as needed */
+  display: inline-block; /* Allows the button to be center aligned */
+  margin: 0 auto; /* Center the button */
+}
+
+/* Hover effect for submit button */
+.custom-container .btn-primary:hover {
+  background-color: rgb(214, 171, 91);
+  color: white;
+}
+
+
+/* Style for input elements */
+.form-control {
+  margin-bottom: 1rem;
+  border: 1px solid black; /* Dark border with 2px thickness */
+}
+
+/* Adjust border on focus to maintain default Bootstrap focus style */
+.form-control:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}

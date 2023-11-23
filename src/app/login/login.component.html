@@ -18,25 +18,31 @@
 
           <!-- Email input -->
           <div class="form-outline mb-4">
+            <label class="form-label" for="form3Example3">User Name
+              <span style="color: red;">*</span>
+            </label>
             <span *ngIf="userValidator && userValidator.invalid && userValidator.touched"
             style="color: red;"
-            >required UserName</span>
+            >  Required UserName</span>
             <input type="text" class="form-control form-control-lg"
               placeholder="Enter Your User Name" 
               formControlName="UserName"/>
-            <label class="form-label" for="form3Example3">User Name</label>
+            
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-3">
+            <label class="form-label" for="form3Example4">Password
+              <span style="color: red;">*</span>
+            </label>
             <span *ngIf="passwordValidator && passwordValidator.invalid && passwordValidator.touched"
             style="color: red;"
-            >required Password
+            >  Required Password
           </span>
             <input type="password"  class="form-control form-control-lg"
               placeholder="Enter password"
               formControlName="Password" />
-            <label class="form-label" for="form3Example4">Password</label>
+            
             <!-- <span *ngIf="passwordValidator && passwordValidator.invalid && passwordValidator.touched"
                     style="color: red;">: minimum Length 6</span> -->
           </div>

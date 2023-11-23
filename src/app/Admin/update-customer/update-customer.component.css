@@ -3,8 +3,39 @@ body {
   font-family: 'Arial', sans-serif;
 }
 
+/* Custom Table Styles */
+table tr th, table tr td {
+  background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+  border-collapse: separate;
+  border-spacing: 0; /* Removes default spacing */
+  width: 100%;
+  max-width: max-content;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.custom-table th, .custom-table td {
+  padding: 8px 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd; /* Only horizontal borders */
+}
+
+.custom-table th {
+  background-color: #343a40; /* Black background for headers */
+  color: white; /* White text */
+  border: none; /* Remove borders */
+}
+
+.custom-table tbody tr {
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.custom-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly less transparent on hover */
+}
+
+
 /* Styling for the table */
-.table {
+/* .table {
   border-collapse: collapse;
   width: 100%;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -23,7 +54,7 @@ body {
 
 .table-striped tbody tr:nth-of-type(odd) {
   background-color: #f2f2f2;
-}
+} */
 
 /* Styling for pagination */
 .pagination {
@@ -122,3 +153,6 @@ body {
   .btn-primary:hover {
     background-color: #0056b3; /* Darker blue on hover */
   }
+
+
+  

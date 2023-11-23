@@ -1,3 +1,31 @@
+
+
+
+
+/* Keyframes for slide-in animation */
+@keyframes slideInAnimation {
+  from {
+      transform: translateX(-30px); /* Start from left */
+      opacity: 0; /* Start from fully transparent */
+  }
+  to {
+      transform: translateX(0); /* End at original position */
+      opacity: 1; /* Fully opaque */
+  }
+}
+
+/* Apply the animation to each table row */
+.table.custom-table tbody tr {
+  animation: slideInAnimation 0.8s ease-out; /* 0.5s duration, ease-out timing function */
+}
+
+
+
+
+
+
+
+
 .moveForm {
     border: 1px solid #ccc; /* Border color for the form */
     border-radius: 8px; /* Rounded corners */
@@ -11,3 +39,78 @@
   .moveForm:hover {
     border-color: #88ff00; /* Change border color on hover */
   }
+
+
+
+
+  /* Style for the table to add mild transparency */
+.table.custom-table {
+  /* background-color: rgba(255, 255, 255, 0.8); White with 80% opacity */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Style for the table header */
+/* .row .col .table.custom-table thead {
+  background-color: rgba(0, 0, 0, 0.8); 
+} */
+
+/* Style for the table row on hover */
+.table.custom-table tbody tr:hover {
+  background-color: rgb(205, 248, 237); /* Fully opaque on hover */
+  transform: scale(1.02); /* Slightly increase size */
+  transition: transform 0.3s, background-color 0.3s; /* Smooth transition for transform and background-color */
+}
+
+/* Style for table cells */
+.table.custom-table td,
+.table.custom-table th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Additional styles for buttons */
+.btn-success, .btn-danger {
+  transition: transform 0.2s; /* Smooth transition for button press */
+}
+
+.btn-success:hover, .btn-danger:hover {
+  transform: scale(1.1);
+  background-color: black; 
+  color: gold;/* Slightly increase size on hover */
+}
+
+
+table tr td, table tr th {
+  background-color: rgba(255, 255, 255, 0.2) ; /* This sets a white background with 50% opacity */
+  /* Other styles */
+  font-weight: 500;
+}
+
+.custom-table thead tr th{
+  background-color: rgba(0, 0, 0, 0.8); /* This sets a black background with 50% opacity for the header */
+  color: rgb(255, 254, 254); /* Ensuring the text color is white */
+}
+
+.modal-header {
+  background-color: black;
+  color: rgb(212, 169, 89);
+}
+
+/* Styles for the close button */
+.modal-header .btn-close {
+  color: orange;
+  filter: invert(1); /* Invert the color for visibility */
+  opacity: 1;
+}
+
+/* Hover and focus styles for the close button */
+.modal-header .btn-close:hover,
+.modal-header .btn-close:focus {
+  color: rgb(243, 214, 87);
+  opacity: 0.5; /* Slightly reduce opacity on hover/focus */
+}
+
+
+.modal-body{
+  background-color: rgba(167, 178, 184, 0.5)
+}

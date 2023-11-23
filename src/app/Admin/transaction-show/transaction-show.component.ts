@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AccountServiceService } from 'src/app/service/account-service.service';
 import { TransactionServiceService } from 'src/app/service/transaction-service.service';
@@ -8,6 +8,7 @@ import { TransactionServiceService } from 'src/app/service/transaction-service.s
   selector: 'app-transaction-show',
   templateUrl: './transaction-show.component.html',
   styleUrls: ['./transaction-show.component.css']
+  // encapsulation: ViewEncapsulation.None
 })
 export class TransactionShowComponent {
 

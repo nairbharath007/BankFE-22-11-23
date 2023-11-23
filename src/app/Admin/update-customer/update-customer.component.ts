@@ -39,14 +39,14 @@ fetchSingleData: any={};
       {
         next:(data)=>
         {
-          console.log("sucess");
+          console.log("Success");
           console.log(data);
           
           this.fetchSingleData=data
         },
         error:(err:HttpErrorResponse)=>
         {
-          console.log("error here");
+          console.log("Error here.");
           console.log(err);
           
         }

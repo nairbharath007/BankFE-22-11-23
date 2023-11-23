@@ -3,7 +3,10 @@
     <div class="col-md-6">
       <h2 class="mb-4">Document Upload</h2>
 
-    
+     <!-- Success Alert -->
+     <div *ngIf="uploadSuccess" class="alert alert-success mt-3" role="alert">
+      Document uploaded successfully!
+    </div>
 
       <form [formGroup]="customerDocumentForm" (ngSubmit)="submitData()">
         <!-- Document Type -->

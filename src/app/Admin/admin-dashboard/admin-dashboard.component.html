@@ -86,22 +86,22 @@
           <!-- Navbar brand -->
           <!-- <a class="navbar-brand text-bg-primary bg-success" href="/admin">Navbar</a> -->
 
-          <div class="row align-items-center w-100">
+          <div class="row align-items-center w-100" style="margin-left: 10px;">
             <!-- List items on the left side -->
 
-            <div class="col-md-2">
+            <div class="col-md-7" >
               <button (click)="registerNewAdmin()" class="btn btn-success"><strong>Register Admin</strong></button>
             </div>
             <!-- Input -->
-            <div class="col-md-3 align-content-center mt-3">
+            <!-- <div class="col-md-3 align-content-center mt-3">
               <input type="date" [(ngModel)]="dateData" class="form-control"
                 placeholder="Filter Transaction using Date">
             </div>
 
-            <!-- Search button -->
+            
             <div class="col-md-2">
               <button (click)="searchData()" class="btn btn-success"><strong>Search</strong></button>
-            </div>
+            </div> -->
 
            
 
@@ -247,6 +247,7 @@
                   <tr>
                     <th>Query Message</th>
                     <th>Customer ID</th>
+                    
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -254,8 +255,9 @@
                   <tr *ngFor="let query of customerQueries">
                     <td>{{ query.queryText }}</td>
                     <td>{{ query.customerId }}</td>
+                    
                     <td>
-                      <button class="btn btn-primary" (click)="generateReplyForm()">Reply</button>
+                      <button class="btn btn-primary" (click)="generateReplyForm(query.customerId)">Reply</button>
                     </td>
                   </tr>
                 </tbody>
@@ -263,7 +265,46 @@
             </div>
 
             <!-- Right Column (Lower part) -->
-            <div class="col-md-6" *ngIf="formShow">
+
+            <!-- Reply Form Modal -->
+<div class="modal fade" id="replyFormModal" #replyModal tabindex="-1" aria-labelledby="replyFormModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="replyFormModalLabel">Reply to Query</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Place your reply form here -->
+        <!-- ... existing reply form code ... -->
+        <div class="col-md-6" *ngIf="formShow">
+          <!-- <h2>Reply to Query</h2> -->
+          <form [formGroup]="replyForm" (ngSubmit)="onSubmit(replyForm.value)">
+            <div class="mb-3">
+              <label for="replyMessage" class="form-label">Reply Message:</label>
+              <textarea class="form-control" formControlName="replyQuery"></textarea>
+              <span class="error-message"
+                *ngIf="replyValidator && replyValidator.invalid && replyValidator.touched">
+                Required Reply Text
+              </span>
+            </div>
+            <div class="mb-3">
+              <label for="customerId" class="form-label">Customer ID:</label>
+              <input type="number" class="form-control" formControlName="customerId" readonly>
+              <span class="error-message"
+                *ngIf="cutomerIdValidator && cutomerIdValidator.invalid && cutomerIdValidator.touched">
+                Required Customer ID
+              </span>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+            <!-- <div class="col-md-6" *ngIf="formShow">
               <h2>Reply to Query</h2>
               <form [formGroup]="replyForm" (ngSubmit)="onSubmit(replyForm.value)">
                 <div class="mb-3">
@@ -284,7 +325,11 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
-            </div>
+            </div> -->
+
+
+
+
           </div>
         </div>
 

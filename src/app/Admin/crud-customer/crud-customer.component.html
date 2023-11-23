@@ -1,9 +1,9 @@
 <div>
 
   <div class="row mt-5">
-    <div class="col-lg-6">
-      <table class="table table-striped table-bordered table-responsive-lg custom-table text-center">
-        <thead class="bg-black text-white">
+    <div class="col">
+      <table class="table table-striped table-rounded table-responsive-lg custom-table text-center">
+        <thead class="bg-dark text-white">
           <tr>
           
             <th>First Name</th>
@@ -25,18 +25,196 @@
             <td>{{ item.gender }}</td>
             <td>{{ item.contactDetails }}</td>
             <td>{{ item.state }}</td>
-            <td><button class="btn btn-success"(click)="showUpdateForm()">Update</button></td>
-            <td><button class="btn btn-danger" (click)="showDeleteForm()">Delete</button></td>
-          </tr>
+            <td>
+              <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#updateCustomerModal" (click)="loadUpdateForm(item)">Update</button>
+            </td>
+            <td>
+              <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal" (click)="loadDeleteForm(item)">Delete</button>
+            </td>
         </tbody>
       </table>
     </div>
 
+
+
+     <!-- Update Customer Modal -->
+  <div class="modal fade" id="updateCustomerModal" #updateModal tabindex="-1" aria-labelledby="updateCustomerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="updateCustomerModalLabel">Update Customer</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Update Form -->
+          <form [formGroup]="customerRegisterForm" (ngSubmit)="submitData(customerRegisterForm.value)">
+            <!-- Form fields here... -->
+            <div class="form-outline mb-4">
+              <span *ngIf="customerValidator && customerValidator.invalid && customerValidator.touched"
+              style="color: red;"
+              > Required User ID</span>
+              <input type="number" class="form-control form-control-lg" 
+              formControlName="customerId" [(ngModel)]="fetchSingleData.customerId" readonly />
+       
+              <label class="form-label" >Customer ID</label>
+            </div>
+        
+          <div class="form-outline mb-4">
+            <span *ngIf="firstNameValidator && firstNameValidator.invalid && firstNameValidator.touched"
+            style="color: red;"
+            > Required FirstName</span>
+            <input type="text" id="form3Example97" class="form-control form-control-lg"
+            formControlName="firstName" [(ngModel)]="fetchSingleData.firstName"/>
+            <label class="form-label" for="form3Example97">First Name</label>
+          </div>
+          <div class="form-outline mb-4">
+            <span *ngIf="lastNameValidator && lastNameValidator.invalid && lastNameValidator.touched"
+            style="color: red;"
+            > Required LastName</span>
+            <input type="text" id="form3Example97" class="form-control form-control-lg" 
+            formControlName="lastName"  [(ngModel)]="fetchSingleData.lastName" />
+            <label class="form-label" for="form3Example97">Last Name</label>
+          </div>
+      
+          <div class="form-outline mb-4">
+            <span *ngIf="emailValidator && emailValidator.invalid && emailValidator.touched"
+            style="color: red;"
+            > Required Email</span>
+            <input type="email" class="form-control form-control-lg" 
+            formControlName="email"  [(ngModel)]="fetchSingleData.email" />
+            <label class="form-label" for="form3Example97">Email ID</label>
+          </div>
+      
+          <div class="form-outline mb-4">
+            <label for="state" class="form-label required-field">State 
+            </label>
+            <select class="form-select form-control-lg" formControlName="state" id="state">
+              <option value="" disabled selected>Select State</option>
+              <!-- Loop through the states array and create options dynamically -->
+              <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+            </select>
+            <span *ngIf="stateValidator && stateValidator.invalid && stateValidator.touched"
+              style="color: red;">Select State</span>
+          </div>
+      
+      
+          <div class="form-outline mb-4">
+            <span *ngIf="genderValidator && genderValidator.invalid && genderValidator.touched"
+            style="color: red;"
+            > Required Gender</span>
+            <input type="text" class="form-control form-control-lg" 
+            formControlName="gender"  [(ngModel)]="fetchSingleData.gender" />
+            <label class="form-label" for="form3Example97">Gender</label>
+          </div>
+      
+      
+          <div class="form-outline mb-4">
+            <span *ngIf="contactDetailsValidator && contactDetailsValidator.invalid && contactDetailsValidator.touched"
+            style="color: red;"
+            > Required ContactDetails</span>
+            <input type="text" class="form-control form-control-lg" 
+            formControlName="contactDetails"  [(ngModel)]="fetchSingleData.contactDetails" />
+            <label class="form-label" for="form3Example97">ContactDetails</label>
+          </div>
+      
+      
+          <div class="form-outline mb-4">
+              <span *ngIf=" userValidatorId && userValidatorId.invalid && userValidatorId.touched"
+              style="color: red;" 
+              > Required User ID</span>
+              <input type="number" class="form-control form-control-lg" 
+              formControlName="userId" [(ngModel)]="fetchSingleData.userId" readonly />
+          
+              <label class="form-label">User ID</label>
+            </div>
+          <div class="d-flex  pt-3">
+           
+            <button type="submit" class="btn btn-warning btn-lg ms-2" [disabled]="customerRegisterForm.invalid">Submit form</button>
+          </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Customer Modal -->
+  <div class="modal fade" id="deleteCustomerModal" tabindex="-1" #deleteModal aria-labelledby="deleteCustomerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteCustomerModalLabel">Delete Customer</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Delete Form -->
+          <form [formGroup]="customerDeleteForm" (ngSubmit)="submitDeleteData(customerDeleteForm.value)">
+            <!-- Form fields here... -->
+            <div class="form-outline mb-4">
+              <span *ngIf="DcustomerValidator && DcustomerValidator.invalid && DcustomerValidator.touched"
+              style="color: red;"
+              >required User ID</span>
+              <input type="number" class="form-control form-control-lg" 
+              formControlName="customerId" [(ngModel)]="fetchSingleData.customerId"  readonly/>
+            
+              <label class="form-label" >Customer ID</label>
+            </div>
+            
+            <div class="form-outline mb-4">
+            <span *ngIf="DfirstNameValidator && DfirstNameValidator.invalid && DfirstNameValidator.touched"
+            style="color: red;"
+            >required FirstName</span>
+            <input type="text" id="form3Example97" class="form-control form-control-lg"
+            formControlName="firstName" [(ngModel)]="fetchSingleData.firstName" readonly/>
+            <label class="form-label" for="form3Example97">First Name</label>
+            </div>
+            <div class="form-outline mb-4">
+            <span *ngIf="DlastNameValidator && DlastNameValidator.invalid && DlastNameValidator.touched"
+            style="color: red;"
+            >required LastName</span>
+            <input type="text" id="form3Example97" class="form-control form-control-lg" 
+            formControlName="lastName"  [(ngModel)]="fetchSingleData.lastName" readonly/>
+            <label class="form-label" for="form3Example97">Last Name</label>
+            </div>
+            
+            <div class="form-outline mb-4">
+            <span *ngIf="DemailValidator && DemailValidator.invalid && DemailValidator.touched"
+            style="color: red;"
+            >required Email</span>
+            <input type="email" class="form-control form-control-lg" 
+            formControlName="email"  [(ngModel)]="fetchSingleData.email" readonly/>
+            <label class="form-label" for="form3Example97">Email ID</label>
+            </div>
+            <div class="form-outline mb-4">
+                <span *ngIf=" DuserValidatorId &&  DuserValidatorId.invalid &&  DuserValidatorId.touched"
+                style="color: red;" 
+                >required User ID</span>
+                <input type="number" class="form-control form-control-lg" 
+                formControlName="userId" [(ngModel)]="fetchSingleData.userId"  />
+            
+                <label class="form-label" >User ID</label>
+              </div>
+            <div class="d-flex justify-content-end pt-3">
+            
+            <button type="submit" class="btn btn-warning btn-lg ms-2" [disabled]="customerDeleteForm.invalid">Submit form</button>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 
     <div class="row"> 
       <div class="col-lg-5 ml-5 moveForm " *ngIf="UpdateCustomer">
         <h1>Update Customer</h1>
           <div class="form-group">
             <select class="form-control" (change)="selectedData($event)">
+              <option>Select EmailID</option>
             <option *ngFor="let item of dataStore" value={{item.customerId}}>{{ item.email }}</option>
             </select>
             <label for="selectCustomer">Select Customer:</label>
@@ -127,6 +305,7 @@
     <h1>Delete Customer</h1>
     <div class="form-group">
       <select class="form-control" (change)="selectedData($event)">
+        <option>Select EmailID</option>
       <option *ngFor="let item of dataStore" value={{item.customerId}}>{{ item.email }}</option>
       </select>
       <label for="selectCustomer">Select Customer:</label>
@@ -190,4 +369,4 @@ formControlName="email"  [(ngModel)]="fetchSingleData.email" readonly/>
 
     </div>
     
-
+ -->

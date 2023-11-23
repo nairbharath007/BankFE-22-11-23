@@ -1,46 +1,65 @@
-<div>
-  <form [formGroup]="accountForm" (ngSubmit)="onSubmit(accountForm.value)" class="col-md-6 mx-auto">
-    <div class="form-group">
-      <label for="accountType">Select Account Number:</label>
-      <select formControlName="accountNumber" class="form-control account-select">
-        
-        <option *ngFor="let item of accountNumberGet" [value]="item.accountNumber">{{ item.accountNumber }}</option>
-      </select>
-      <div *ngIf="accountTypeValidator && accountTypeValidator.invalid && accountTypeValidator.touched" class="text-danger">
-        Account type is required.
+<!-- account-list.component.html -->
+
+<!-- Form Section -->
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form [formGroup]="accountForm" (ngSubmit)="onSubmit(accountForm.value)" class="text-center">
+        <div class="form-group">
+          <label for="accountType">Select Account Number:</label>
+          <select formControlName="accountNumber" class="form-control account-select">
+            <option *ngFor="let item of accountNumberGet" [value]="item.accountNumber">{{ item.accountNumber }}</option>
+          </select>
+          <div *ngIf="accountTypeValidator && accountTypeValidator.invalid && accountTypeValidator.touched" class="text-danger">
+            Account type is required.
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3" [disabled]="accountForm.invalid">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Accordion Section for Account Information -->
+<div *ngIf="resultcondition" class="container mt-4">
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Account Information
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <!-- Account Information Table -->
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Account Number</th>
+                <th>Account Type</th>
+                <th>Opening Date</th>
+                <th>Account Balance</th>
+                <th>Customer Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let account of accounts">
+                <td>{{ account.accountNumber }}</td>
+                <td>{{ account.accountType }}</td>
+                <td>{{ account.openningDate | date:'short' }}</td>
+                <td>{{ account.accountBalance |  currency:'INR' }}</td>
+                <td>{{ account.customer.firstName }} {{ account.customer.lastName }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div> 
-    <button type="submit" class="btn btn-primary" [disabled]="accountForm.invalid">Submit</button>
-  </form>
+    </div>
   </div>
 
-  <div *ngIf="resultcondition">
-    <div class="container mt-4">
-        <h2>Account Information</h2>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Account Number</th>
-              <th>Account Type</th>
-              
-              <th>Opening Date</th>
-              <th>Account Balance</th>
-              <th>Customer Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let account of accounts">
-              <td>{{ account.accountNumber }}</td>
-              <td>{{ account.accountType }}</td>
-              
-              <td>{{ account.openningDate | date:'short' }}</td>
-              <td>{{ account.accountBalance |  currency:'INR' }}</td>
-              <td>{{ account.customer.firstName }} {{ account.customer.lastName }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      
+
+<!-- Additional Sections... -->
+
 
 
   <div class="container mt-4">
@@ -74,8 +93,8 @@
       </tbody>
     </table>
   </div>
-  
-  </div>
+</div>
+
 
 
 

@@ -7,7 +7,7 @@
           <input type="number" formControlName="customerId" class="form-control">
           <span *ngIf="qValidator && qValidator.invalid && qValidator.touched"
                 style="color: red;"
-          >required customerId</span>
+          >  Required customerId</span>
         </div>
 
         <button type="submit" class="btn btn-primary" [disabled]="customerIdForm.invalid">Submit</button>

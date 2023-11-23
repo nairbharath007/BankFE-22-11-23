@@ -158,6 +158,7 @@ this.showAccountCreate=true;
   this.showQueryTab=false
   this.showCalculator = false;
       this.showCardsState = false;
+      this.showWarrning=false;
 
 
 }
@@ -204,6 +205,7 @@ this.showAccountForm=true;
   this.showQueryTab=false
   this.showCalculator = false;
       this.showCardsState = false;
+      this.showWarrning=false;
 }
 
 

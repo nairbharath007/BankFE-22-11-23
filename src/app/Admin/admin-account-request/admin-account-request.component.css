@@ -1,6 +1,28 @@
 /* Add this CSS to your styles.css or component-specific styles */
 
 
+
+/* Keyframes for slide-in animation */
+@keyframes slideInAnimation {
+  from {
+      transform: translateX(-30px); /* Start from left */
+      opacity: 0; /* Start from fully transparent */
+  }
+  to {
+      transform: translateX(0); /* End at original position */
+      opacity: 1; /* Fully opaque */
+  }
+}
+
+/* Apply the animation to each table row */
+.table.custom-table tbody tr {
+  animation: slideInAnimation 0.8s ease-out; /* 0.5s duration, ease-out timing function */
+}
+
+
+
+
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -19,7 +41,7 @@
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  max-width: 400px; 
+  max-width: max-content; 
   width: 100%;
 }
 .container {
@@ -61,5 +83,99 @@ label {
 
 /* Hover effect for submit button */
 .btn-primary:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: black; /* Darker blue on hover */
 }
+
+
+/* Custom styles for full-screen modal */
+.modal-fullscreen {
+  width: 100vw;   /* Viewport width */
+  height: 100vh;  /* Viewport height */
+  max-width: none;
+}
+
+.modal-fullscreen .modal-content {
+  height: 100%;
+}
+
+.modal-fullscreen .modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-fullscreen img {
+  max-width: 100%;   /* Make image responsive */
+  max-height: 80vh;  /* Limit image height to 80% of viewport height */
+  object-fit: cover; /* Preserve aspect ratio */
+}
+
+
+/* Table with transparent background */
+table tr td, table tr th {
+  background-color: rgba(255, 255, 255, 0.2) ; /* This sets a white background with 50% opacity */
+  /* Other styles */
+  font-weight: 500;
+}
+
+table thead tr th{
+  background-color: rgba(0, 0, 0, 0.8); /* This sets a black background with 50% opacity for the header */
+  color: rgb(255, 254, 254); /* Ensuring the text color is white */
+}
+/* Animation on hover */
+.table:hover {
+  transform: scale(1.02); /* Slightly larger on hover */
+  background-color: rgba(255, 255, 255, 0.9); /* Less transparent on hover */
+}
+
+/* Style for search section */
+.col-md-4 {
+  text-align: right; /* Aligns content to the right */
+}
+
+/* Adjust padding and margins as needed */
+
+.table {
+  width: 100%;
+  /* Other styles */
+}
+
+@media (max-width: 768px) {
+  .col-md-4 {
+      text-align: left;
+      width: 100%;
+  }
+}
+
+
+
+/* Style for the search input */
+.input-group .form-control {
+  border-radius: 0.5rem 0 0 0.5rem; /* Rounded corners on the left side */
+  padding: 0.5rem 1rem; /* Comfortable padding */
+  border: 1px solid #ced4da; /* Matching border color */
+  height: calc(2.25rem + 2px); /* Adjust height to match the button */
+  margin-bottom: 0; /* Align with the button */
+}
+
+/* Style for the search button */
+.input-group .btn-outline-secondary {
+  border-radius: 0 0.5rem 0.5rem 0; /* Rounded corners on the right side */
+  height: calc(2.25rem + 2px); /* Match height of the input */
+  padding: 0.5rem 1.5rem; /* Padding similar to the input */
+  background-color: #e7b557; /* Primary color for visibility */
+  color: rgb(0, 0, 0); /* Text color */
+  border: 1px solid #27496d; /* Border color */
+  margin-bottom: 0; /* Align with the input */
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: 500; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the search button */
+.input-group .btn-outline-secondary:hover {
+  background-color: black; /* Slightly darker on hover */
+  color: #fff; /* Text color on hover */
+  border-color: #0056b3; /* Border color on hover */
+}
+
+
